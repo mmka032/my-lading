@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from "react";
-import Navbar from "./elements/Navbar";
-import Footer from "./elements/Footer";
+import { Navbar } from "./elements/Navbar";
+import { Footer } from "./elements/Footer";
 
 interface LayoutProps {
   title: string;

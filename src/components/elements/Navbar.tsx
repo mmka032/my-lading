@@ -1,17 +1,18 @@
 import Container from "../shared/Container";
-import logo from "../../assets/react.svg";
+import logo from "../../assets/momo_logo 3.svg";
 import NavItem from "../shared/NavItem";
 import BtnLink from "../shared/BtnLink";
 import { useThemeStore } from "../../store/ThemeStore";
 
-const navItems = [
+// eslint-disable-next-line react-refresh/only-export-components
+export const navItems = [
   { href: "#", text: "Home" },
-  { href: "#service", text: "Services" },
+  { href: "#projects", text: "Projects" },
   { href: "#about-us", text: "About Us" },
-  { href: "#contact", text: "Features" },
+  { href: "#contact", text: "Contact" },
 ];
 
-const Navbar = () => {
+export const Navbar = () => {
   const { toggleTheme, theme } = useThemeStore();
 
   return (
@@ -25,7 +26,7 @@ const Navbar = () => {
                 className="inline-flex text-lg font-semibold
                 text-heading-1 items-center"
               >
-                CreateReactApp
+                Momo’s Portfolio
               </div>
             </a>
           </div>
@@ -97,5 +98,3 @@ const Navbar = () => {
     </header>
   );
 };
-
-export default Navbar;

@@ -1,10 +1,24 @@
 @import "tailwindcss";
 
 @theme {
+  /* 背景・ボックス */
   --color-bg: 255 255 255;
   --color-box: 255 255 255;
-  --box-border: 229 231 235;
-  --box-sd: 226 232 240 / 0.5;
+  --box-border: 194 194 194;
+  --box-sd: 39 10 97 / 0.1;
+
+  /* カラーパレット */
+  --main-section: 39 10 97;        /* #270A61 */
+  --accent: 149 117 205;           /* #9575CD */
+  --line: 194 194 194;             /* #C2C2C2 */
+
+  /* テキストカラー */
+  --text-main: 31 41 55;           /* #1f2937 */
+  --text-sub: 39 10 97;            /* #270A61 */
+  --text-accent: 55 65 81;         /* #374151 */
+  --text-sub-accent: 153 153 153;  /* #999999 */
+
+  /* 見出し用 (既存) */
   --heading-1: 23 37 84;
   --heading-2: 31 41 55;
   --heading-3: 55 65 81;
@@ -36,6 +50,20 @@
   .text-heading-3 {
     color: rgb(var(--heading-3));
   }
+
+  .border-line {
+    border-color: rgb(var(--line));
+  }
+
+  .bg-accent {
+    background-color: rgb(var(--accent));
+  }
+  .text-accent {
+    color: rgb(var(--accent));
+  }
+  .shadow-box-shadow {
+    --tw-shadow-color: rgb(var(--box-sd));
+  }
 }
 
 html {
@@ -43,5 +71,7 @@ html {
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Zen Maru Gothic", sans-serif;
+  color: var(--text-main);
+  font-weight: 400;
 }

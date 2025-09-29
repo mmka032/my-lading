@@ -8,7 +8,7 @@ const NavItem = ({ href, text }: NavItemProps) => {
     <li>
       <a
         href={href}
-        className="duration-400 font-medium ease-linear hover:text-primary"
+        className="font-medium ease-linear hover:text-primary"
       >
         {text}
       </a>
