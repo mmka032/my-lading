@@ -1,5 +1,5 @@
 import Container from "../shared/Container";
-import logo from "../../assets/momo_logo 3.svg";
+import logo from "../../assets/momo_logo.svg";
 import NavItem from "../shared/NavItem";
 import BtnLink from "../shared/BtnLink";
 import { useThemeStore } from "../../store/ThemeStore";

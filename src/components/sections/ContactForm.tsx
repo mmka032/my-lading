@@ -95,7 +95,7 @@ const ContactForm = () => {
   if (step === 'done') {
     return (
       <section id="contact">
-        <div className="mx-auto text-center bg-white">
+        <div className="mx-auto text-center text-heading-2">
           {/* ✅ チェックマークにアニメーション追加 */}
           <motion.div
           key={step}
@@ -105,7 +105,7 @@ const ContactForm = () => {
             className="w-30 h-30 rounded-full flex items-center justify-center mx-auto mb-12.5 mt-20"
             style={{ backgroundColor: "#9575CD" }}
           >
-            <FontAwesomeIcon icon={faCheck} className="text-white text-6xl" />
+            <FontAwesomeIcon icon={faCheck} className="text-white text-6xl " />
           </motion.div>
           <h1 className="text-6xl font-bold w-full mb-12.5 text-center">送信完了</h1>
           <h2 className="text-4xl font-bold">お問い合わせありがとうございます。</h2>
@@ -134,13 +134,13 @@ const ContactForm = () => {
     return (
       <section id="contact">
         <div className="w-full mx-auto">
-          <h2 className="text-6xl font-bold mt-20 mb-5 text-center">Contact From（確認）</h2>
-          <p className="w-full pb-25 text-center">ご記入いただいた内容をご確認ください。</p>
+          <h2 className="text-6xl font-bold mt-20 mb-5 text-center text-heading-2">Contact From（確認）</h2>
+          <p className="w-full pb-25 text-center text-heading-2">ご記入いただいた内容をご確認ください。</p>
 
-          <h3 className='pl-80 pb-7.5 text-4xl font-bold'>
+          <h3 className='pl-80 pb-7.5 text-4xl font-bold text-heading-2'>
             基本情報
           </h3>
-          <div className="w-200 mx-auto text-lg">
+          <div className="w-200 mx-auto text-lg text-heading-2">
             {[
               { label: "お名前", name: "user_name", required: true },
               { label: "ふりがな", name: "user_furigana", required: true },
@@ -151,7 +151,7 @@ const ContactForm = () => {
               <div key={name} className="mb-12.5">
                 <div className="mb-5">
                   <strong>{label}</strong>
-                  <span className={`ml-2 ${required ? 'bg-[#D15F5C]' : 'bg-[#C4C4C4]'} text-white text-xs px-2.5 py-[5px] rounded-full ml-4`}>
+                  <span className={`ml-2 ${required ? 'bg-[#D15F5C]' : 'bg-[#C4C4C4]'} text-white text-xs px-2.5 py-[5px] rounded-full ml-4 `}>
                     {required ? '必須' : '任意'}
                   </span>
                 </div>
@@ -160,8 +160,8 @@ const ContactForm = () => {
             ))}
           </div>
 
-          <h3 className='pl-80 mb-12.5 text-4xl font-bold'>お問い合わせ内容</h3>
-          <div className="mb-12.5 w-200 mx-auto text-lg">
+          <h3 className='pl-80 mb-12.5 text-4xl font-bold text-heading-2'>お問い合わせ内容</h3>
+          <div className="mb-12.5 w-200 mx-auto text-lg text-heading-2">
             <div className="mb-5">
               <strong className='font-medium'>お問い合わせ内容</strong>
               <span className=" bg-[#D15F5C] text-white text-xs px-2.5 py-[5px] rounded-full ml-4">必須</span>
@@ -169,13 +169,15 @@ const ContactForm = () => {
             {formData.message}
           </div>
 
-          <h3 className='pl-80 mb-12.5 text-4xl font-bold'>同意事項</h3>
+          <h3 className='pl-80 mb-12.5 text-4xl font-bold text-heading-2'>同意事項</h3>
           <div className="mb-12.5 w-200 mx-auto text-lg">
-            <div className="mb-5">
+            <div className="mb-5 text-heading-2">
               <strong>プライバシーポリシー同意</strong>
               <span className=" bg-[#D15F5C] text-white text-xs px-2.5 py-[5px] rounded-full ml-4">必須</span>
             </div>
-            {formData.agree ? '同意する' : '未同意'}
+            <span className="text-heading-2">
+              {formData.agree ? '同意する' : '未同意'}
+            </span>
           </div>
 
           <form ref={form} onSubmit={sendMail}>
@@ -187,14 +189,14 @@ const ContactForm = () => {
               return <input key={key} type="hidden" name={key} value={String(value)} />;
             })}
 
-            <div className="flex gap-4 mt-8  w-200 mx-auto">
+            <div className="flex gap-4 mt-8 w-200 mx-auto">
               <button
               type="button"
               onClick={() => {
                 scrollUp();
                 setStep('form');
               }}
-              className="w-95 py-5 rounded-full text-white bg-[#BBBBBB] hover:bg-[#AAAAAA]"
+              className="w-95 py-5 rounded-full text-white bg-[#BBBBBB] hover:bg-[#AAAAAA] "
             >
                 修正する
               </button>
@@ -225,8 +227,8 @@ const ContactForm = () => {
       setStep('confirm'); 
       }}
       >
-        <h2 className="text-6xl font-bold mt-25 mb-7.5 text-center">Contact From</h2>
-        <p className="w-full pb-25 text-center">下記に必要事項をご記入の上、お問い合わせください。</p>
+        <h2 className="text-6xl font-bold mt-25 mb-7.5 text-center text-heading-2">Contact From</h2>
+        <p className="w-full pb-25 text-center text-heading-2">下記に必要事項をご記入の上、お問い合わせください。</p>
 
         <div className="w-200 mx-auto">
           {[
@@ -237,9 +239,9 @@ const ContactForm = () => {
             { label: '電話番号', name: 'user_phone', placeholder: '例）09012345678', required: false }
           ].map(({ label, name, placeholder, required }) => (
             <div className="mb-12.5" key={name}>
-              <label className="block text-lg font-medium mb-[20px]">
+              <label className="block text-lg font-medium mb-[20px] text-heading-2">
                 {label}
-                <span className={`ml-2 ${required ? 'bg-[#D15F5C]' : 'bg-[#C4C4C4]'} text-white text-xs px-2.5 py-[5px] rounded-full ml-4`}>
+                <span className={`ml-2 ${required ? 'bg-[#D15F5C]' : 'bg-[#C4C4C4]'} text-white text-xs px-2.5 py-[5px] rounded-full ml-4 text-heading-2`}>
                   {required ? '必須' : '任意'}
                 </span>
               </label>
@@ -250,12 +252,12 @@ const ContactForm = () => {
                 value={formData[name as keyof ContactFormData] as string}
                 onChange={handleChange}
                 required={required}
-                className="w-full px-5 py-5 border border-line rounded-full"
+                className="w-full px-5 py-5 border border-line rounded-full text-heading-2"
               />
             </div>
           ))}
 
-          <div className="mb-12.5">
+          <div className="mb-12.5 text-heading-2">
             <label className="block text-lg font-medium mb-5">
               お問い合わせ内容
               <span className=" bg-[#D15F5C] text-white text-xs px-2.5 py-[5px] rounded-full ml-4">必須</span>（1000文字以内でご記入ください）
@@ -270,12 +272,12 @@ const ContactForm = () => {
             />
           </div>
 
-          <div className="mb-12.5">
+          <div className="mb-12.5 text-heading-2">
             <p className="text-lg font-medium mb-5">
               プライバシーポリシーに同意する
               <span className=" bg-[#D15F5C] text-white text-xs px-2.5 py-[5px] rounded-full ml-4">必須</span>
             </p>
-            <label className="inline-flex items-center text-lg font-medium">
+            <label className="inline-flex items-center text-lg font-medium text-heading-2">
               <input
                 type="checkbox"
                 name="agree"
@@ -291,7 +293,7 @@ const ContactForm = () => {
 
           <button
             type="submit"
-            className="bg-accent text-white py-5 rounded-full hover:bg-[#8566bb] w-full "
+            className="bg-accent text-white py-5 rounded-full hover:bg-[#8566bb] w-full text-heading-2"
           >
             確認画面へ
           </button>
